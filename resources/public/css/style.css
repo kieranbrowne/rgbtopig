@@ -70,19 +70,16 @@ input[type="range"]::-moz-range-thumb {
     font-size: 20px;
 }
 .whitebalance {
-    font-size: 10px;
+    font-size: 20px;
 }
 
-.rgb input[type=number] {
+.whitebalance input[type="number"] ,
+.rgb input[type="number"] {
   width: 2.4em;
   text-align: center;
   font-size: inherit;
   height: 24px;
   vertical-align: top;
-}
-.whitebalance input[type=number] {
-    width: 50px;
-    font-size: inherit;
 }
 
 input {
@@ -95,4 +92,30 @@ h2 {
 
 h1, h2, input {
   transition: color .5s ease;
+}
+
+.pig input[type="text"] {
+    width: calc(100% - 5.5em);
+    font-size: inherit;
+    height: 24px;
+    vertical-align: top;
+}
+.pig input[type="number"] {
+    width: 2.4em;
+    text-align: center;
+    font-size: inherit;
+    height: 24px;
+    vertical-align: top;
+}
+
+#addpig {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 50%;
+    margin: 20px auto;
+    cursor: pointer;
 }

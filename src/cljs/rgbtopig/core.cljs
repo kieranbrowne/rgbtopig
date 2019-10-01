@@ -19,7 +19,6 @@
          rgb :rgb} @state]
     (str "rgb(" (clojure.string/join "," ((juxt :r :g :b) rgb)) ")")))
 (defn text-colour [state]
-
   (let [{rgb :rgb} @state]
     (if (> (reduce + (map int ((juxt :r :g :b) rgb))) (* 255 2))
       "black"
@@ -47,12 +46,21 @@
 
 (defn rgb-form [curs]
   [:div
+   [:input {:type "range" :min 0 :max 255 :value (-> @curs :r)
+            :style {:background "linear-gradient( 90deg, #000, #f00)"}
+            :on-change (partial update-rgb-val (reagent/cursor curs [:r]))}]
    [:input {:type "number" :placeholder "Red" :value (-> @curs :r)
             :style {:color (text-colour app-state)}
-            :on-change (partial update-rgb-val (reagent/cursor curs [:r]))}]
+            :on-change (partial update-rgb-val (reagent/cursor curs [:r]))}][:br]
+   [:input {:type "range" :min 0 :max 255 :value (-> @curs :g)
+            :style {:background "linear-gradient( 90deg, #000, #0f0)"}
+            :on-change (partial update-rgb-val (reagent/cursor curs [:g]))}]
    [:input {:type "number" :placeholder "Green" :value (-> @curs :g)
             :style {:color (text-colour app-state)}
-            :on-change (partial update-rgb-val (reagent/cursor curs [:g]))}]
+            :on-change (partial update-rgb-val (reagent/cursor curs [:g]))}][:br]
+   [:input {:type "range" :min 0 :max 255 :value (-> @curs :b)
+            :style {:background "linear-gradient( 90deg, #000, #00f)"}
+            :on-change (partial update-rgb-val (reagent/cursor curs [:b]))}]
    [:input {:type "number" :placeholder "Blue" :value (-> @curs :b)
             :style {:color (text-colour app-state)}
             :on-change (partial update-rgb-val (reagent/cursor curs [:b]))}]]

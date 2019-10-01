@@ -26,13 +26,22 @@ input {
   border-bottom: 3px solid white;
   background: none;
   margin: 2px;
+  font-family: 'Merriweather', serif;
 }
 
 .rgb input[type=number] {
   width: 90px;
   font-size: 40px;
 }
+.whitebalance input[type=number] {
+    width: 50px;
+    font-size: 20px;
+}
 
 h2 {
   margin-top: 50px;
+}
+
+h1, h2, input {
+  transition: color .5s ease;
 }

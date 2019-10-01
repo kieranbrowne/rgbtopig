@@ -6,23 +6,34 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Vars
 
-(defonce app-state
+(def app-state
   (reagent/atom
-   {:rgb {:r 200 :g 200 :b 200}
+   {:rgb {:r 255 :g 255 :b 255}
+    :whitebalance {:r 255 :g 255 :b 255}
     :pigs [{:pig "(PW6, PW4) Winsor & Newton Titanium White"
             :grams 0
             :id (gensym)}]}))
 
-(defn css-colour [vals]
-  (str "rgb(" (:r vals) "," (:g vals) "," (:b vals)")"))
-(defn text-colour [vals]
-  (if (< (+ (:r vals) (:g vals) (:b vals)) (* 255 1))
-    "black"
-    "white"
-    ))
+(defn css-colour [state]
+  (let [{whitebalance :whitebalance
+         rgb :rgb} @state]
+    (str "rgb(" (clojure.string/join "," ((juxt :r :g :b) rgb)) ")")))
+(defn text-colour [state]
+
+  (let [{rgb :rgb} @state]
+    (if (> (reduce + (map int ((juxt :r :g :b) rgb))) (* 255 2))
+      "black"
+      "white"
+      )))
 
 (defn update-val [atom event]
   (reset! atom (.. event -target -value)))
+
+(defn parse-int [x]
+  (.parseInt js/window x))
+
+(defn update-rgb-val [atom event]
+  (reset! atom (min 255 (max 0 (-> event .-target .-value )))))
 
 (defn rename-pig [atom id event]
   (swap! atom
@@ -34,20 +45,28 @@
          (partial mapv #(if (= id (:id %))
                           (assoc % :grams (.. event -target -value)) %))))
 
+(defn rgb-form [curs]
+  [:div
+   [:input {:type "number" :placeholder "Red" :value (-> @curs :r)
+            :style {:color (text-colour app-state)}
+            :on-change (partial update-rgb-val (reagent/cursor curs [:r]))}]
+   [:input {:type "number" :placeholder "Green" :value (-> @curs :g)
+            :style {:color (text-colour app-state)}
+            :on-change (partial update-rgb-val (reagent/cursor curs [:g]))}]
+   [:input {:type "number" :placeholder "Blue" :value (-> @curs :b)
+            :style {:color (text-colour app-state)}
+            :on-change (partial update-rgb-val (reagent/cursor curs [:b]))}]]
+  )
+
 (defn form [ratom]
   [:form
    [:h1 {:style {:text-align "center"}} "RGBtoPIG"]
+
+   [:div.whitebalance {:style {:text-align "center"}}
+    [rgb-form (reagent/cursor ratom [:whitebalance])]]
+
    [:div.rgb {:style {:text-align "center"}}
-    [:input {:type "number" :placeholder "Red" :value (-> @ratom :rgb :r)
-             :on-change (partial update-val (reagent/cursor ratom [:rgb :r]))
-             :style {:color (text-colour (-> @ratom :rgb))}
-             }]
-    [:input {:type "number" :placeholder "Green" :value (-> @ratom :rgb :g)
-             :style {:color (text-colour (-> @ratom :rgb))}
-             :on-change (partial update-val (reagent/cursor ratom [:rgb :g]))}]
-    [:input {:type "number" :placeholder "Blue" :value (-> @ratom :rgb :b)
-             :style {:color (text-colour (-> @ratom :rgb))}
-             :on-change (partial update-val (reagent/cursor ratom [:rgb :b]))}]]
+    [rgb-form (reagent/cursor ratom [:rgb])]]
    ;; [:p (-> @ratom :rgb str)]
    ;; [:p (-> @ratom :pigs str)]
    [:h2 "Pigments"]
@@ -69,8 +88,8 @@
 ;; Page
 
 (defn page [ratom]
-  [:div#app {:style {:background (css-colour (-> @ratom :rgb))
-                     :color (text-colour (-> @ratom :rgb))}}
+  [:div#app {:style {:background (css-colour app-state)
+                     :color (text-colour app-state)}}
    [form ratom]])
 
 

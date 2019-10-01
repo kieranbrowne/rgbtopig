@@ -16,7 +16,7 @@ body {
   margin: 0 auto;
   max-width: calc(100vw - 60px);
   box-sizing: border-box;
-  margin-top: 120px;
+  margin-top: 60px;
 }
 
 input[type="text"], input[type="number"] {
@@ -31,34 +31,36 @@ input[type="text"], input[type="number"] {
 
 input[type="range"] {
     font-size: inherit;
-    -webkit-appearance: none;  /* Override default CSS styles */
+    -webkit-appearance: none;
     appearance: none;
-    width: 13em; /* Full-width */
-    height: 20px; /* Specified height */
-    background: linear-gradient( 90deg, black, red ); /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 1.0; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    width: 13em;
+    max-width: calc(100vw - 60px - 3em);
+    height: 30px;
+    background: linear-gradient( 90deg, black, red );
+    outline: none;
+    opacity: 1.0;
+    -webkit-transition: .2s;
     transition: opacity .2s;
+    border-radius: 50px;
 }
 input[type="range"]::-webkit-slider-thumb {
     font-size: inherit;
-    -webkit-appearance: none; /* Override default look */
+    -webkit-appearance: none;
     appearance: none;
-    width: 1em; /* Set a specific slider handle width */
-    height: 1em; /* Slider handle height */
-    background: black; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-    border: none;
+    width: 1em;
+    height: 1em;
+    background: none;
+    cursor: pointer;
+    border: 2px solid white;
     border-radius: 50%;
 }
 
 input[type="range"]::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: black; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-    border: none;
+    width: 30px;
+    height: 30px;
+    background: rgba(255,255,255,0.3);
+    cursor: pointer;
+    border: 2px solid white;
     border-radius: 50%;
 }
 
@@ -74,6 +76,8 @@ input[type="range"]::-moz-range-thumb {
   width: 2.4em;
   text-align: center;
   font-size: inherit;
+  height: 24px;
+  vertical-align: top;
 }
 .whitebalance input[type=number] {
     width: 50px;

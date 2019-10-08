@@ -1,6 +1,11 @@
 (ns rgbtopig.core
+  (:require-macros [cljs.core.async.macros :refer [go]])
   (:require
-   [reagent.core :as reagent]))
+   [reagent.core :as reagent]
+   [cljs-http.client :as http]
+   [cljs.core.async :refer [<!]]))
+
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -14,6 +19,18 @@
     :pigs [{:pig "(PW6, PW4) Winsor & Newton Titanium White"
             :grams 0
             :id (gensym)}]}))
+
+(defn try-upload []
+  (go
+    (let [response
+          (<! (http/post "https://dev.kieranbrowne.com/rgbtopig-api/add"
+                        {:json-params
+                         (select-keys @app-state [:rgb :whitebalance :pigs])
+                         :with-credentials? false
+                         }))]
+      (prn response)
+      ))
+  )
 
 (def pigs
   ["(PW6, PW4) Winsor & Newton Titanium White"
@@ -32,7 +49,7 @@
    "(PB15:3, PW4) Art Spectrum Phthalo Blue"
    "(PR108) Art Spectrum Cadmium Red"
    "(PW6, PR101) Art Spectrum Flesh Tint Deep"
-   "(PG18) art Spectrum Viridian"
+   "(PG18) Art Spectrum Viridian"
    ])
 
 (defn whitebalance-colour [state]
@@ -42,14 +59,14 @@
   (let [{whitebalance :whitebalance
          rgb :rgb} @state]
     (str "rgb(" (clojure.string/join ","
-                                     (map (fn [v wb] (* v (/ wb 255)))
+                                     (mapv (fn [v wb] (* v (/ wb 255)))
                                           ((juxt :r :g :b) rgb)
                                           ((juxt :r :g :b) whitebalance)
                                           ))
          ")")))
 (defn text-colour [state]
   (let [{rgb :rgb} @state]
-    (if (> (reduce + (map int ((juxt :r :g :b) rgb))) (* 255 2))
+    (if (> (reduce + (mapv int ((juxt :r :g :b) rgb))) (* 255 2))
       "black"
       "white"
       )))
@@ -99,7 +116,7 @@
   )
 
 (defn form [ratom]
-  [:form
+  [:div.form
    [:h1 {:style {:text-align "center"}} "RGBtoPIG"]
 
    (when (:show-whitebalance @ratom)
@@ -143,6 +160,11 @@
      {:on-click #(swap! (reagent/cursor ratom [:pigs]) (fn [v] (conj v {:pig "" :grams 0 :id (gensym)})))
       :style {:font-size "40px" :border-color (text-colour app-state)}} "+"]
     ]
+   [:div.submit
+    [:button
+     {:on-click
+      try-upload}
+     "Submit"]]
    ])
 
 
@@ -163,7 +185,7 @@
   (when ^boolean js/goog.DEBUG
     (enable-console-print!)
     (println "dev mode")))
-    
+
 
 (defn reload []
   (reagent/render [page app-state]

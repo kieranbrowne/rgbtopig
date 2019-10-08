@@ -2,6 +2,7 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.946"]
                  [reagent "0.7.0"]
+                 [cljs-http "0.1.46"]
                  [javax.xml.bind/jaxb-api "2.2.11"]]
 
   :min-lein-version "2.5.3"
@@ -13,7 +14,8 @@
   :clean-targets ^{:protect false} ["resources/public/js"
                                     "target"]
 
-  :figwheel {:css-dirs ["resources/public/css"]}
+  :figwheel {:css-dirs ["resources/public/css"]
+             :server-port 3451}
 
   :profiles
   {:dev

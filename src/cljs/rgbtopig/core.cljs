@@ -21,6 +21,7 @@
             :id (gensym)}]}))
 
 (defn try-upload []
+  (swap! app-state #(assoc % :remote :uploading))
   (go
     (let [response
           (<! (http/post "https://dev.kieranbrowne.com/rgbtopig-api/add"
@@ -28,6 +29,12 @@
                          (select-keys @app-state [:rgb :whitebalance :pigs])
                          :with-credentials? false
                          }))]
+      (if (:success response)
+        (do
+          (swap! app-state #(assoc % :remote :success))
+          (swap! app-state #(assoc % :rgb {:r 255 :g 255 :b 255})))
+        (swap! app-state #(assoc % :remote :error))
+        )
       (prn response)
       ))
   )
@@ -115,6 +122,24 @@
             :on-change (partial update-rgb-val (reagent/cursor curs [:b]))}]]
   )
 
+(defn suggestions [pig]
+  (if (or (contains? (set pigs) (:pig pig)) (> 2 (.-length (:pig pig))))
+    [:span ""]
+    [:div {:style {:position "absolute"
+                   :background (css-colour app-state)
+                   :width "inherit"}}
+     [:ul
+      (for [s (take 3 (filter (fn [x] (not= -1 (.indexOf x (:pig pig)))) pigs))]
+        [:li
+         {:style {:cursor "pointer"}
+          :on-click #(swap!
+                      (reagent/cursor app-state [:pigs])
+                      (partial mapv (fn [x] (if (= (:id x) (:id pig))
+                                              (assoc x :pig s) x))))}
+         s]
+        )]])
+  )
+
 (defn form [ratom]
   [:div.form
    [:h1 {:style {:text-align "center"}} "RGBtoPIG"]
@@ -145,9 +170,10 @@
       ^{:key (:id p)}
       [:div
        [:input {:type "text" :placeholder "Pigment Code" :value (:pig p)
-                :style {:color (text-colour app-state)
+                :style {:color (if (contains? (set pigs) (:pig p)) (text-colour app-state) "red")
                         :border-color (text-colour app-state)}
                 :on-change (partial rename-pig (reagent/cursor ratom [:pigs]) (:id p))}]
+       [suggestions p]
        [:input {:type "number" :placeholder "grams" :value (:grams p)
                 :style {:color (text-colour app-state)
                         :border-color (text-colour app-state)}
@@ -162,9 +188,17 @@
     ]
    [:div.submit
     [:button
-     {:on-click
+     {:style (if (= :uploading (:remote @app-state))
+               {:opacity "0.4" :pointer-events "none"} {})
+      :on-click
       try-upload}
-     "Submit"]]
+     "Submit"]
+    (case (:remote @app-state)
+      :uploading [:div.spinner]
+      :success [:div.success "✓"]
+      :error [:div.error "×"]
+      [:div])
+    ]
    ])
 
 

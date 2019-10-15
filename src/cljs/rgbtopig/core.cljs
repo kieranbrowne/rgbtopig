@@ -175,6 +175,7 @@
                 :on-change (partial rename-pig (reagent/cursor ratom [:pigs]) (:id p))}]
        [suggestions p]
        [:input {:type "number" :placeholder "grams" :value (:grams p)
+                :step 0.1
                 :style {:color (text-colour app-state)
                         :border-color (text-colour app-state)}
                 :on-change (partial change-weight-pig (reagent/cursor ratom [:pigs]) (:id p))}]

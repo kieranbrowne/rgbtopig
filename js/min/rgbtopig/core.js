@@ -7,7 +7,7 @@ goog.require('cljs_http.client');
 goog.require('cljs.core.async');
 if(typeof rgbtopig.core.app_state !== 'undefined'){
 } else {
-rgbtopig.core.app_state = reagent.core.atom.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$rgb,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$r,(255),cljs.core.cst$kw$g,(255),cljs.core.cst$kw$b,(255)], null),cljs.core.cst$kw$whitebalance,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$r,(255),cljs.core.cst$kw$g,(255),cljs.core.cst$kw$b,(255)], null),cljs.core.cst$kw$show_DASH_whitebalance,false,cljs.core.cst$kw$pigs,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$pig,"(PW6, PW4) Winsor & Newton Titanium White",cljs.core.cst$kw$grams,(0),cljs.core.cst$kw$id,cljs.core.gensym.cljs$core$IFn$_invoke$arity$0()], null)], null)], null));
+rgbtopig.core.app_state = reagent.core.atom.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$rgb,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$r,(255),cljs.core.cst$kw$g,(255),cljs.core.cst$kw$b,(255)], null),cljs.core.cst$kw$whitebalance,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$r,(255),cljs.core.cst$kw$g,(255),cljs.core.cst$kw$b,(255)], null),cljs.core.cst$kw$show_DASH_whitebalance,false,cljs.core.cst$kw$pigs,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$pig,"(PW6; PW4) Winsor & Newton Titanium White",cljs.core.cst$kw$grams,(0),cljs.core.cst$kw$id,cljs.core.gensym.cljs$core$IFn$_invoke$arity$0()], null)], null)], null));
 }
 rgbtopig.core.try_upload = (function rgbtopig$core$try_upload(){
 cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(rgbtopig.core.app_state,(function (p1__18087_SHARP_){
@@ -195,7 +195,7 @@ return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped(state__15439__
 
 return c__15437__auto__;
 });
-rgbtopig.core.pigs = new cljs.core.PersistentVector(null, 17, 5, cljs.core.PersistentVector.EMPTY_NODE, ["(PW6, PW4) Winsor & Newton Titanium White","(PB29) Art Spectrum Ultramarine Blue","(PBr7) Gamblin Raw Sienna","(PBr7) Gamblin Burnt Sienna","(PBr7) Gamblin Burnt Umber","(PV19) Flinders Blue Violet","(PR108) Cadmium Maroon","(PBk28) Gamblin Black Spinel","(PG18) Art Spectrum Viridian","(PY37, PY35, PG7) Art Spectrum Cadmium Green","(PO20) Art Spectum Cadmium Orange","(PR101) Gamblin Indian Red","(PB27) Art Spectrum Prussian Blue","(PB15:3, PW4) Art Spectrum Phthalo Blue","(PR108) Art Spectrum Cadmium Red","(PW6, PR101) Art Spectrum Flesh Tint Deep","(PG18) Art Spectrum Viridian"], null);
+rgbtopig.core.pigs = new cljs.core.PersistentVector(null, 8, 5, cljs.core.PersistentVector.EMPTY_NODE, ["(PB15:3) Art Spectrum Phthalo Blue","(PV19; PV23) Permanent Magenta","(PY35) Cadmium Yellow Light","(PBK28) Gamblin Black Spinel","(PW6) Art Spectrum Titanium White","(PR108) Art Spectrum Cadmium Red","(PY37; PY35; PG7) Art Spectrum Cadmium Green","(PB29) Art Spectrum Ultramarine Blue"], null);
 rgbtopig.core.whitebalance_colour = (function rgbtopig$core$whitebalance_colour(state){
 var map__18134 = cljs.core.deref(state);
 var map__18134__$1 = ((((!((map__18134 == null)))?((((map__18134.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__18134.cljs$core$ISeq$)))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__18134):map__18134);
@@ -209,7 +209,7 @@ var map__18137 = cljs.core.deref(state);
 var map__18137__$1 = ((((!((map__18137 == null)))?((((map__18137.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__18137.cljs$core$ISeq$)))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__18137):map__18137);
 var whitebalance = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__18137__$1,cljs.core.cst$kw$whitebalance);
 var rgb = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__18137__$1,cljs.core.cst$kw$rgb);
-return ["rgb(",cljs.core.str.cljs$core$IFn$_invoke$arity$1(clojure.string.join.cljs$core$IFn$_invoke$arity$2(",",cljs.core.mapv.cljs$core$IFn$_invoke$arity$3(((function (map__18137,map__18137__$1,whitebalance,rgb){
+return ["rgb(",cljs.core.str.cljs$core$IFn$_invoke$arity$1(clojure.string.join.cljs$core$IFn$_invoke$arity$2(", ",cljs.core.mapv.cljs$core$IFn$_invoke$arity$3(((function (map__18137,map__18137__$1,whitebalance,rgb){
 return (function (v,wb){
 return (v * (wb / (255)));
 });})(map__18137,map__18137__$1,whitebalance,rgb))

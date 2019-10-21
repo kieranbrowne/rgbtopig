@@ -200,7 +200,7 @@ rgbtopig.core.whitebalance_colour = (function rgbtopig$core$whitebalance_colour(
 var map__18134 = cljs.core.deref(state);
 var map__18134__$1 = ((((!((map__18134 == null)))?((((map__18134.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__18134.cljs$core$ISeq$)))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__18134):map__18134);
 var whitebalance = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__18134__$1,cljs.core.cst$kw$whitebalance);
-return ["rgb(",cljs.core.str.cljs$core$IFn$_invoke$arity$1(clojure.string.join.cljs$core$IFn$_invoke$arity$2(",",(function (){var fexpr__18136 = cljs.core.juxt.cljs$core$IFn$_invoke$arity$3(cljs.core.cst$kw$r,cljs.core.cst$kw$g,cljs.core.cst$kw$b);
+return ["rgb(",cljs.core.str.cljs$core$IFn$_invoke$arity$1(clojure.string.join.cljs$core$IFn$_invoke$arity$2(", ",(function (){var fexpr__18136 = cljs.core.juxt.cljs$core$IFn$_invoke$arity$3(cljs.core.cst$kw$r,cljs.core.cst$kw$g,cljs.core.cst$kw$b);
 return (fexpr__18136.cljs$core$IFn$_invoke$arity$1 ? fexpr__18136.cljs$core$IFn$_invoke$arity$1(whitebalance) : fexpr__18136.call(null,whitebalance));
 })())),")"].join('');
 });

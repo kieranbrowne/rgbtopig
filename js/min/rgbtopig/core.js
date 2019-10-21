@@ -240,27 +240,29 @@ return window.parseInt(x);
 rgbtopig.core.update_rgb_val = (function rgbtopig$core$update_rgb_val(atom,event){
 return cljs.core.reset_BANG_(atom,(function (){var x__8025__auto__ = (255);
 var y__8026__auto__ = (function (){var x__8018__auto__ = (0);
-var y__8019__auto__ = event.target.value;
+var y__8019__auto__ = (function (){var G__18144 = event.target.value;
+return parseInt(G__18144);
+})();
 return ((x__8018__auto__ > y__8019__auto__) ? x__8018__auto__ : y__8019__auto__);
 })();
 return ((x__8025__auto__ < y__8026__auto__) ? x__8025__auto__ : y__8026__auto__);
 })());
 });
 rgbtopig.core.rename_pig = (function rgbtopig$core$rename_pig(atom,id,event){
-return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(atom,cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core.mapv,(function (p1__18144_SHARP_){
-if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(id,cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p1__18144_SHARP_))){
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__18144_SHARP_,cljs.core.cst$kw$pig,event.target.value);
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(atom,cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core.mapv,(function (p1__18145_SHARP_){
+if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(id,cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p1__18145_SHARP_))){
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__18145_SHARP_,cljs.core.cst$kw$pig,event.target.value);
 } else {
-return p1__18144_SHARP_;
+return p1__18145_SHARP_;
 }
 })));
 });
 rgbtopig.core.change_weight_pig = (function rgbtopig$core$change_weight_pig(atom,id,event){
-return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(atom,cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core.mapv,(function (p1__18145_SHARP_){
-if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(id,cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p1__18145_SHARP_))){
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__18145_SHARP_,cljs.core.cst$kw$grams,event.target.value);
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(atom,cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core.mapv,(function (p1__18146_SHARP_){
+if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(id,cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p1__18146_SHARP_))){
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__18146_SHARP_,cljs.core.cst$kw$grams,event.target.value);
 } else {
-return p1__18145_SHARP_;
+return p1__18146_SHARP_;
 }
 })));
 });
@@ -271,37 +273,37 @@ rgbtopig.core.suggestions = (function rgbtopig$core$suggestions(pig){
 if((cljs.core.contains_QMARK_(cljs.core.set(rgbtopig.core.pigs),cljs.core.cst$kw$pig.cljs$core$IFn$_invoke$arity$1(pig))) || (((2) > cljs.core.cst$kw$pig.cljs$core$IFn$_invoke$arity$1(pig).length))){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$span,""], null);
 } else {
-return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$position,"absolute",cljs.core.cst$kw$background,rgbtopig.core.css_colour(rgbtopig.core.app_state),cljs.core.cst$kw$width,"inherit"], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$ul,(function (){var iter__8476__auto__ = (function rgbtopig$core$suggestions_$_iter__18146(s__18147){
+return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$position,"absolute",cljs.core.cst$kw$background,rgbtopig.core.css_colour(rgbtopig.core.app_state),cljs.core.cst$kw$width,"inherit"], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$ul,(function (){var iter__8476__auto__ = (function rgbtopig$core$suggestions_$_iter__18147(s__18148){
 return (new cljs.core.LazySeq(null,(function (){
-var s__18147__$1 = s__18147;
+var s__18148__$1 = s__18148;
 while(true){
-var temp__4657__auto__ = cljs.core.seq(s__18147__$1);
+var temp__4657__auto__ = cljs.core.seq(s__18148__$1);
 if(temp__4657__auto__){
-var s__18147__$2 = temp__4657__auto__;
-if(cljs.core.chunked_seq_QMARK_(s__18147__$2)){
-var c__8474__auto__ = cljs.core.chunk_first(s__18147__$2);
+var s__18148__$2 = temp__4657__auto__;
+if(cljs.core.chunked_seq_QMARK_(s__18148__$2)){
+var c__8474__auto__ = cljs.core.chunk_first(s__18148__$2);
 var size__8475__auto__ = cljs.core.count(c__8474__auto__);
-var b__18149 = cljs.core.chunk_buffer(size__8475__auto__);
-if((function (){var i__18148 = (0);
+var b__18150 = cljs.core.chunk_buffer(size__8475__auto__);
+if((function (){var i__18149 = (0);
 while(true){
-if((i__18148 < size__8475__auto__)){
-var s = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__8474__auto__,i__18148);
-cljs.core.chunk_append(b__18149,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$cursor,"pointer"], null),cljs.core.cst$kw$on_DASH_click,((function (i__18148,s,c__8474__auto__,size__8475__auto__,b__18149,s__18147__$2,temp__4657__auto__){
+if((i__18149 < size__8475__auto__)){
+var s = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__8474__auto__,i__18149);
+cljs.core.chunk_append(b__18150,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$cursor,"pointer"], null),cljs.core.cst$kw$on_DASH_click,((function (i__18149,s,c__8474__auto__,size__8475__auto__,b__18150,s__18148__$2,temp__4657__auto__){
 return (function (){
-return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(reagent.core.cursor(rgbtopig.core.app_state,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core.mapv,((function (i__18148,s,c__8474__auto__,size__8475__auto__,b__18149,s__18147__$2,temp__4657__auto__){
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(reagent.core.cursor(rgbtopig.core.app_state,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core.mapv,((function (i__18149,s,c__8474__auto__,size__8475__auto__,b__18150,s__18148__$2,temp__4657__auto__){
 return (function (x){
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(x),cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(pig))){
 return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(x,cljs.core.cst$kw$pig,s);
 } else {
 return x;
 }
-});})(i__18148,s,c__8474__auto__,size__8475__auto__,b__18149,s__18147__$2,temp__4657__auto__))
+});})(i__18149,s,c__8474__auto__,size__8475__auto__,b__18150,s__18148__$2,temp__4657__auto__))
 ));
-});})(i__18148,s,c__8474__auto__,size__8475__auto__,b__18149,s__18147__$2,temp__4657__auto__))
+});})(i__18149,s,c__8474__auto__,size__8475__auto__,b__18150,s__18148__$2,temp__4657__auto__))
 ], null),s], null));
 
-var G__18150 = (i__18148 + (1));
-i__18148 = G__18150;
+var G__18151 = (i__18149 + (1));
+i__18149 = G__18151;
 continue;
 } else {
 return true;
@@ -309,25 +311,25 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons(cljs.core.chunk(b__18149),rgbtopig$core$suggestions_$_iter__18146(cljs.core.chunk_rest(s__18147__$2)));
+return cljs.core.chunk_cons(cljs.core.chunk(b__18150),rgbtopig$core$suggestions_$_iter__18147(cljs.core.chunk_rest(s__18148__$2)));
 } else {
-return cljs.core.chunk_cons(cljs.core.chunk(b__18149),null);
+return cljs.core.chunk_cons(cljs.core.chunk(b__18150),null);
 }
 } else {
-var s = cljs.core.first(s__18147__$2);
-return cljs.core.cons(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$cursor,"pointer"], null),cljs.core.cst$kw$on_DASH_click,((function (s,s__18147__$2,temp__4657__auto__){
+var s = cljs.core.first(s__18148__$2);
+return cljs.core.cons(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$cursor,"pointer"], null),cljs.core.cst$kw$on_DASH_click,((function (s,s__18148__$2,temp__4657__auto__){
 return (function (){
-return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(reagent.core.cursor(rgbtopig.core.app_state,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core.mapv,((function (s,s__18147__$2,temp__4657__auto__){
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(reagent.core.cursor(rgbtopig.core.app_state,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core.mapv,((function (s,s__18148__$2,temp__4657__auto__){
 return (function (x){
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(x),cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(pig))){
 return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(x,cljs.core.cst$kw$pig,s);
 } else {
 return x;
 }
-});})(s,s__18147__$2,temp__4657__auto__))
+});})(s,s__18148__$2,temp__4657__auto__))
 ));
-});})(s,s__18147__$2,temp__4657__auto__))
-], null),s], null),rgbtopig$core$suggestions_$_iter__18146(cljs.core.rest(s__18147__$2)));
+});})(s,s__18148__$2,temp__4657__auto__))
+], null),s], null),rgbtopig$core$suggestions_$_iter__18147(cljs.core.rest(s__18148__$2)));
 }
 } else {
 return null;
@@ -346,40 +348,40 @@ return cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2((-1),x.indexOf(cljs.core.
 });
 rgbtopig.core.form = (function rgbtopig$core$form(ratom){
 return new cljs.core.PersistentVector(null, 8, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$form,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$h1,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$text_DASH_align,"center"], null)], null),"RGBtoPIG"], null),(cljs.core.truth_(cljs.core.cst$kw$show_DASH_whitebalance.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(ratom)))?new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$whitebalance,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 8, [cljs.core.cst$kw$text_DASH_align,"center",cljs.core.cst$kw$position,cljs.core.cst$kw$fixed,cljs.core.cst$kw$top,(0),cljs.core.cst$kw$left,(0),cljs.core.cst$kw$bottom,(0),cljs.core.cst$kw$right,(0),cljs.core.cst$kw$padding_DASH_top,"122px",cljs.core.cst$kw$background,rgbtopig.core.whitebalance_colour(ratom)], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [rgbtopig.core.rgb_form,reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$whitebalance], null))], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$margin_DASH_top,"20px",cljs.core.cst$kw$cursor,"pointer"], null),cljs.core.cst$kw$on_DASH_click,(function (){
-return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(ratom,(function (p1__18151_SHARP_){
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__18151_SHARP_,cljs.core.cst$kw$show_DASH_whitebalance,false);
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(ratom,(function (p1__18152_SHARP_){
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__18152_SHARP_,cljs.core.cst$kw$show_DASH_whitebalance,false);
 }));
 })], null),"Done \u2714"], null)], null):null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$rgb,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$text_DASH_align,"center"], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [rgbtopig.core.rgb_form,reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$rgb], null))], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$text_DASH_align,"center",cljs.core.cst$kw$margin_DASH_top,"20px",cljs.core.cst$kw$cursor,"pointer"], null),cljs.core.cst$kw$on_DASH_click,(function (){
-return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(ratom,(function (p1__18152_SHARP_){
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__18152_SHARP_,cljs.core.cst$kw$show_DASH_whitebalance,true);
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(ratom,(function (p1__18153_SHARP_){
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__18153_SHARP_,cljs.core.cst$kw$show_DASH_whitebalance,true);
 }));
-})], null),"adjust whitebalance"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$h2,"Pigments"], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$pig,(function (){var iter__8476__auto__ = (function rgbtopig$core$form_$_iter__18153(s__18154){
+})], null),"adjust whitebalance"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$h2,"Pigments"], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$pig,(function (){var iter__8476__auto__ = (function rgbtopig$core$form_$_iter__18154(s__18155){
 return (new cljs.core.LazySeq(null,(function (){
-var s__18154__$1 = s__18154;
+var s__18155__$1 = s__18155;
 while(true){
-var temp__4657__auto__ = cljs.core.seq(s__18154__$1);
+var temp__4657__auto__ = cljs.core.seq(s__18155__$1);
 if(temp__4657__auto__){
-var s__18154__$2 = temp__4657__auto__;
-if(cljs.core.chunked_seq_QMARK_(s__18154__$2)){
-var c__8474__auto__ = cljs.core.chunk_first(s__18154__$2);
+var s__18155__$2 = temp__4657__auto__;
+if(cljs.core.chunked_seq_QMARK_(s__18155__$2)){
+var c__8474__auto__ = cljs.core.chunk_first(s__18155__$2);
 var size__8475__auto__ = cljs.core.count(c__8474__auto__);
-var b__18156 = cljs.core.chunk_buffer(size__8475__auto__);
-if((function (){var i__18155 = (0);
+var b__18157 = cljs.core.chunk_buffer(size__8475__auto__);
+if((function (){var i__18156 = (0);
 while(true){
-if((i__18155 < size__8475__auto__)){
-var p = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__8474__auto__,i__18155);
-cljs.core.chunk_append(b__18156,cljs.core.with_meta(new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input,new cljs.core.PersistentArrayMap(null, 5, [cljs.core.cst$kw$type,"text",cljs.core.cst$kw$placeholder,"Pigment Code",cljs.core.cst$kw$value,cljs.core.cst$kw$pig.cljs$core$IFn$_invoke$arity$1(p),cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$color,((cljs.core.contains_QMARK_(cljs.core.set(rgbtopig.core.pigs),cljs.core.cst$kw$pig.cljs$core$IFn$_invoke$arity$1(p)))?rgbtopig.core.text_colour(rgbtopig.core.app_state):"red"),cljs.core.cst$kw$border_DASH_color,rgbtopig.core.text_colour(rgbtopig.core.app_state)], null),cljs.core.cst$kw$on_DASH_change,cljs.core.partial.cljs$core$IFn$_invoke$arity$3(rgbtopig.core.rename_pig,reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p))], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [rgbtopig.core.suggestions,p], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input,new cljs.core.PersistentArrayMap(null, 6, [cljs.core.cst$kw$type,"number",cljs.core.cst$kw$placeholder,"grams",cljs.core.cst$kw$value,cljs.core.cst$kw$grams.cljs$core$IFn$_invoke$arity$1(p),cljs.core.cst$kw$step,0.1,cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$color,rgbtopig.core.text_colour(rgbtopig.core.app_state),cljs.core.cst$kw$border_DASH_color,rgbtopig.core.text_colour(rgbtopig.core.app_state)], null),cljs.core.cst$kw$on_DASH_change,cljs.core.partial.cljs$core$IFn$_invoke$arity$3(rgbtopig.core.change_weight_pig,reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p))], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$span,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$font_DASH_size,"40px",cljs.core.cst$kw$line_DASH_height,"32px",cljs.core.cst$kw$margin_DASH_left,"10px",cljs.core.cst$kw$vertical_DASH_align,"top"], null),cljs.core.cst$kw$on_DASH_click,((function (i__18155,p,c__8474__auto__,size__8475__auto__,b__18156,s__18154__$2,temp__4657__auto__){
+if((i__18156 < size__8475__auto__)){
+var p = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__8474__auto__,i__18156);
+cljs.core.chunk_append(b__18157,cljs.core.with_meta(new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input,new cljs.core.PersistentArrayMap(null, 5, [cljs.core.cst$kw$type,"text",cljs.core.cst$kw$placeholder,"Pigment Code",cljs.core.cst$kw$value,cljs.core.cst$kw$pig.cljs$core$IFn$_invoke$arity$1(p),cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$color,((cljs.core.contains_QMARK_(cljs.core.set(rgbtopig.core.pigs),cljs.core.cst$kw$pig.cljs$core$IFn$_invoke$arity$1(p)))?rgbtopig.core.text_colour(rgbtopig.core.app_state):"red"),cljs.core.cst$kw$border_DASH_color,rgbtopig.core.text_colour(rgbtopig.core.app_state)], null),cljs.core.cst$kw$on_DASH_change,cljs.core.partial.cljs$core$IFn$_invoke$arity$3(rgbtopig.core.rename_pig,reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p))], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [rgbtopig.core.suggestions,p], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input,new cljs.core.PersistentArrayMap(null, 6, [cljs.core.cst$kw$type,"number",cljs.core.cst$kw$placeholder,"grams",cljs.core.cst$kw$value,cljs.core.cst$kw$grams.cljs$core$IFn$_invoke$arity$1(p),cljs.core.cst$kw$step,0.1,cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$color,rgbtopig.core.text_colour(rgbtopig.core.app_state),cljs.core.cst$kw$border_DASH_color,rgbtopig.core.text_colour(rgbtopig.core.app_state)], null),cljs.core.cst$kw$on_DASH_change,cljs.core.partial.cljs$core$IFn$_invoke$arity$3(rgbtopig.core.change_weight_pig,reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p))], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$span,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$font_DASH_size,"40px",cljs.core.cst$kw$line_DASH_height,"32px",cljs.core.cst$kw$margin_DASH_left,"10px",cljs.core.cst$kw$vertical_DASH_align,"top"], null),cljs.core.cst$kw$on_DASH_click,((function (i__18156,p,c__8474__auto__,size__8475__auto__,b__18157,s__18155__$2,temp__4657__auto__){
 return (function (){
-return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core.filter,((function (i__18155,p,c__8474__auto__,size__8475__auto__,b__18156,s__18154__$2,temp__4657__auto__){
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core.filter,((function (i__18156,p,c__8474__auto__,size__8475__auto__,b__18157,s__18155__$2,temp__4657__auto__){
 return (function (x){
 return cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p),cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(x));
-});})(i__18155,p,c__8474__auto__,size__8475__auto__,b__18156,s__18154__$2,temp__4657__auto__))
+});})(i__18156,p,c__8474__auto__,size__8475__auto__,b__18157,s__18155__$2,temp__4657__auto__))
 ));
-});})(i__18155,p,c__8474__auto__,size__8475__auto__,b__18156,s__18154__$2,temp__4657__auto__))
+});})(i__18156,p,c__8474__auto__,size__8475__auto__,b__18157,s__18155__$2,temp__4657__auto__))
 ], null),"\u00D7"], null)], null),new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p)], null)));
 
-var G__18158 = (i__18155 + (1));
-i__18155 = G__18158;
+var G__18159 = (i__18156 + (1));
+i__18156 = G__18159;
 continue;
 } else {
 return true;
@@ -387,21 +389,21 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons(cljs.core.chunk(b__18156),rgbtopig$core$form_$_iter__18153(cljs.core.chunk_rest(s__18154__$2)));
+return cljs.core.chunk_cons(cljs.core.chunk(b__18157),rgbtopig$core$form_$_iter__18154(cljs.core.chunk_rest(s__18155__$2)));
 } else {
-return cljs.core.chunk_cons(cljs.core.chunk(b__18156),null);
+return cljs.core.chunk_cons(cljs.core.chunk(b__18157),null);
 }
 } else {
-var p = cljs.core.first(s__18154__$2);
-return cljs.core.cons(cljs.core.with_meta(new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input,new cljs.core.PersistentArrayMap(null, 5, [cljs.core.cst$kw$type,"text",cljs.core.cst$kw$placeholder,"Pigment Code",cljs.core.cst$kw$value,cljs.core.cst$kw$pig.cljs$core$IFn$_invoke$arity$1(p),cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$color,((cljs.core.contains_QMARK_(cljs.core.set(rgbtopig.core.pigs),cljs.core.cst$kw$pig.cljs$core$IFn$_invoke$arity$1(p)))?rgbtopig.core.text_colour(rgbtopig.core.app_state):"red"),cljs.core.cst$kw$border_DASH_color,rgbtopig.core.text_colour(rgbtopig.core.app_state)], null),cljs.core.cst$kw$on_DASH_change,cljs.core.partial.cljs$core$IFn$_invoke$arity$3(rgbtopig.core.rename_pig,reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p))], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [rgbtopig.core.suggestions,p], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input,new cljs.core.PersistentArrayMap(null, 6, [cljs.core.cst$kw$type,"number",cljs.core.cst$kw$placeholder,"grams",cljs.core.cst$kw$value,cljs.core.cst$kw$grams.cljs$core$IFn$_invoke$arity$1(p),cljs.core.cst$kw$step,0.1,cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$color,rgbtopig.core.text_colour(rgbtopig.core.app_state),cljs.core.cst$kw$border_DASH_color,rgbtopig.core.text_colour(rgbtopig.core.app_state)], null),cljs.core.cst$kw$on_DASH_change,cljs.core.partial.cljs$core$IFn$_invoke$arity$3(rgbtopig.core.change_weight_pig,reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p))], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$span,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$font_DASH_size,"40px",cljs.core.cst$kw$line_DASH_height,"32px",cljs.core.cst$kw$margin_DASH_left,"10px",cljs.core.cst$kw$vertical_DASH_align,"top"], null),cljs.core.cst$kw$on_DASH_click,((function (p,s__18154__$2,temp__4657__auto__){
+var p = cljs.core.first(s__18155__$2);
+return cljs.core.cons(cljs.core.with_meta(new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input,new cljs.core.PersistentArrayMap(null, 5, [cljs.core.cst$kw$type,"text",cljs.core.cst$kw$placeholder,"Pigment Code",cljs.core.cst$kw$value,cljs.core.cst$kw$pig.cljs$core$IFn$_invoke$arity$1(p),cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$color,((cljs.core.contains_QMARK_(cljs.core.set(rgbtopig.core.pigs),cljs.core.cst$kw$pig.cljs$core$IFn$_invoke$arity$1(p)))?rgbtopig.core.text_colour(rgbtopig.core.app_state):"red"),cljs.core.cst$kw$border_DASH_color,rgbtopig.core.text_colour(rgbtopig.core.app_state)], null),cljs.core.cst$kw$on_DASH_change,cljs.core.partial.cljs$core$IFn$_invoke$arity$3(rgbtopig.core.rename_pig,reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p))], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [rgbtopig.core.suggestions,p], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input,new cljs.core.PersistentArrayMap(null, 6, [cljs.core.cst$kw$type,"number",cljs.core.cst$kw$placeholder,"grams",cljs.core.cst$kw$value,cljs.core.cst$kw$grams.cljs$core$IFn$_invoke$arity$1(p),cljs.core.cst$kw$step,0.1,cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$color,rgbtopig.core.text_colour(rgbtopig.core.app_state),cljs.core.cst$kw$border_DASH_color,rgbtopig.core.text_colour(rgbtopig.core.app_state)], null),cljs.core.cst$kw$on_DASH_change,cljs.core.partial.cljs$core$IFn$_invoke$arity$3(rgbtopig.core.change_weight_pig,reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p))], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$span,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$font_DASH_size,"40px",cljs.core.cst$kw$line_DASH_height,"32px",cljs.core.cst$kw$margin_DASH_left,"10px",cljs.core.cst$kw$vertical_DASH_align,"top"], null),cljs.core.cst$kw$on_DASH_click,((function (p,s__18155__$2,temp__4657__auto__){
 return (function (){
-return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core.filter,((function (p,s__18154__$2,temp__4657__auto__){
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),cljs.core.partial.cljs$core$IFn$_invoke$arity$2(cljs.core.filter,((function (p,s__18155__$2,temp__4657__auto__){
 return (function (x){
 return cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p),cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(x));
-});})(p,s__18154__$2,temp__4657__auto__))
+});})(p,s__18155__$2,temp__4657__auto__))
 ));
-});})(p,s__18154__$2,temp__4657__auto__))
-], null),"\u00D7"], null)], null),new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p)], null)),rgbtopig$core$form_$_iter__18153(cljs.core.rest(s__18154__$2)));
+});})(p,s__18155__$2,temp__4657__auto__))
+], null),"\u00D7"], null)], null),new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p)], null)),rgbtopig$core$form_$_iter__18154(cljs.core.rest(s__18155__$2)));
 }
 } else {
 return null;
@@ -415,9 +417,9 @@ return iter__8476__auto__(cljs.core.cst$kw$pigs.cljs$core$IFn$_invoke$arity$1(cl
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(reagent.core.cursor(ratom,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$pigs], null)),(function (v){
 return cljs.core.conj.cljs$core$IFn$_invoke$arity$2(v,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$pig,"",cljs.core.cst$kw$grams,(1),cljs.core.cst$kw$id,cljs.core.gensym.cljs$core$IFn$_invoke$arity$0()], null));
 }));
-}),cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$font_DASH_size,"40px",cljs.core.cst$kw$border_DASH_color,rgbtopig.core.text_colour(rgbtopig.core.app_state)], null)], null),"+"], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$submit,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$button,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$style,((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$uploading,cljs.core.cst$kw$remote.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(rgbtopig.core.app_state))))?new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$opacity,"0.4",cljs.core.cst$kw$pointer_DASH_events,"none"], null):cljs.core.PersistentArrayMap.EMPTY),cljs.core.cst$kw$on_DASH_click,rgbtopig.core.try_upload], null),"Submit"], null),(function (){var G__18157 = cljs.core.cst$kw$remote.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(rgbtopig.core.app_state));
-var G__18157__$1 = (((G__18157 instanceof cljs.core.Keyword))?G__18157.fqn:null);
-switch (G__18157__$1) {
+}),cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$font_DASH_size,"40px",cljs.core.cst$kw$border_DASH_color,rgbtopig.core.text_colour(rgbtopig.core.app_state)], null)], null),"+"], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$submit,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$button,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$style,((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$uploading,cljs.core.cst$kw$remote.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(rgbtopig.core.app_state))))?new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$opacity,"0.4",cljs.core.cst$kw$pointer_DASH_events,"none"], null):cljs.core.PersistentArrayMap.EMPTY),cljs.core.cst$kw$on_DASH_click,rgbtopig.core.try_upload], null),"Submit"], null),(function (){var G__18158 = cljs.core.cst$kw$remote.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(rgbtopig.core.app_state));
+var G__18158__$1 = (((G__18158 instanceof cljs.core.Keyword))?G__18158.fqn:null);
+switch (G__18158__$1) {
 case "uploading":
 return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$spinner], null);
 
